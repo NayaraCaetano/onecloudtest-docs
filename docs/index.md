@@ -14,6 +14,8 @@ Documentação dos processos executados para realização do desafio técnico QA
 -------------
 Documenta os testes.
 
+Link do servidor de CI: [http://onecloudtest.ddns.net:8085/](http://onecloudtest.ddns.net:8085/)
+
 
 ##Teste caixa branca
 
