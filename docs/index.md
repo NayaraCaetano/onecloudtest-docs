@@ -72,6 +72,15 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
  - Tive dúvidas se o teste de carga precisaria ser escrito considerando leitura e escrita, ou apenas leitura (visto que a API fornece apenas leitura de informações). Considerei apenas acessos de leitura.
  - Em situação de leitura e escrita, eu teria uma view que, em 70% dos casos executaria uma operação de leitura e, em 30% dos casos, executaria uma operação de escrita (esses valores mudam de acordo com a aplicação), e a utilizaria nos testes de carga.
 
+**Resultados:**
+
+ Foram testados o envio de 10K de requests nas seguintes concorrências:
+
+   - 1000: servidor falhou ([log de execução](http://onecloudtest.ddns.net:8085/browse/ON-CAR-11));
+   - 500: servidor falhou ([log de execução](http://onecloudtest.ddns.net:8085/browse/ON-CAR-12));
+   - 250: servidor falhou ([log de execução](http://onecloudtest.ddns.net:8085/browse/ON-CAR-13));
+   - 100: servidor conseguiu executar ([log de execução e resultados](http://onecloudtest.ddns.net:8085/browse/ON-CAR-14)).
+
 
 #Observações gerais
 -------------
