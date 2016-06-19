@@ -19,7 +19,7 @@ Documenta os testes.
 
 Testa as regras de negócio da aplicação.
 
-Repositório (fica dentro da aplicação): [https://github.com/NayaraCaetano/onecloud-qa](https://github.com/NayaraCaetano/onecloud-qa)
+Repositório (fica dentro da aplicação, no arquivo tests.py de cada app): [https://github.com/NayaraCaetano/onecloud-qa](https://github.com/NayaraCaetano/onecloud-qa).
 
 **Motivações:**
 
@@ -35,6 +35,10 @@ Repositório (fica dentro da aplicação): [https://github.com/NayaraCaetano/one
 
   - Criei a app `core` para exemplificar a forma com que gosto de estruturar o código, pelo tamanho da aplicação do teste ela não seria tão necessária;
   - Não nomear as urls (para utilização da função `reverse` do `django.core.urlresolvers`) não é uma boa prática. Caso um endereço mude, todas as chamadas à url *hard coded* precisariam ser alteradas.
+
+**Resultados:**
+
+  - Verificar [servidor de CI](http://onecloudtest.ddns.net:8085/browse/ON-UN);
 
 
 ## Teste caixa preta (funcional)
@@ -52,6 +56,11 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
  - Normalmente eu não testaria o login do admin do django, mas neste caso criei para exemplificar o processo de preencher input, submeter form e verificar resultado.
  - Deixei intencionalmente um teste falhando para que os resultados pudessem sem acompanhados do servidor de CI.
  - Adicionei o Jquery no projeto, já que foram necessários utilizar seletores como `contains` e `visible`.
+
+**Resultados:**
+
+  - Verificar [servidor de CI](http://onecloudtest.ddns.net:8085/browse/ON-FUN);
+  - O teste falhando evidencia um problema de usabilidade. A tabela não deve ser mostrada contendo apenas as colunas, caso não existam dados para serem mostrados, uma linha informando esta condição deveria ser inserida.
 
 
 ## Teste de carga
@@ -79,7 +88,48 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
    - 1000: servidor falhou ([log de execução](http://onecloudtest.ddns.net:8085/browse/ON-CAR-11));
    - 500: servidor falhou ([log de execução](http://onecloudtest.ddns.net:8085/browse/ON-CAR-12));
    - 250: servidor falhou ([log de execução](http://onecloudtest.ddns.net:8085/browse/ON-CAR-13));
-   - 100: servidor conseguiu executar ([log de execução e resultados](http://onecloudtest.ddns.net:8085/browse/ON-CAR-14)).
+   - 100: servidor conseguiu executar ([log de execução e resultados](http://onecloudtest.ddns.net:8085/browse/ON-CAR-14/log)).
+
+
+## Teste de usabilidade
+
+**Resultados:**
+
+ Levando em consideração que, o único contato do usuário com o sistema seria a página `index`, de onde ele veria as comparações entre os serviços e a interação com o admin do django aconteceria apenas por usuário superadministrador então:
+
+   - Pontos positivos:
+      * Exibição de navbar com orientação da empresa;
+      * Tabela `striped`, que facilita a visualização de listas extensas;
+      * Possibiidade de ordenação das linhas da tabela.
+   - Pontos negativos:
+      * Problema com tabela sem dados para serem exibidos (já evidenciado em testes funcionais);
+      * Botão do menu "recolhido" (`navbar-toggle collapsed`) que é mostrado sempre que a resolução da tela de diminuída. No caso, como não possuímos opções de menu no navbar, o elemento do html com esta classe e seus filhos devem ser removidos.
+
+
+## Teste de confiabilidade
+
+**Resultados:**
+
+ A aplicação não é completamente tolerante a falhas. O banco de dados escolhido (sqlite) traz vantagem de performance, porém não é nada mais que um arquivo. O PostgreSQL ofereceria melhores condições para replicação, backup, escalabilidade. Outra vantagem que o PosgreSQL oferece sobre o sqlite é a gerência de acessos simultâneos.
+
+ Vale observar que a implementação dos recursos listados acima, se não necessárias, desqualificam a necessidade de alteração de tipo de banco de dados.
+
+
+
+## Teste de portabilidade
+
+**Resultados:**
+
+ O html do `index` é responsivo e se adapta amigavelmente à telas menores (tablets, celulares). O único problema, já referenciado no teste de usabilidade, é o botão para expandir o menu que é mostrado, e não deveria.
+
+
+
+## Teste de acessibilidade
+
+**Resultados:**
+
+ Usuários com deficiência visual não conseguiriam usar corretamente o sistema seu auxilio de alguma ferramenta externa. Como sugestão, a [api do google translate](https://cloud.google.com/translate/docs/) pode, tanto fazer traduções, quanto leitura em voz alta das informações na tela.
+
 
 
 #Observações gerais
