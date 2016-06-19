@@ -54,6 +54,25 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
  - Adicionei o Jquery no projeto, já que foram necessários utilizar seletores como `contains` e `visible`.
 
 
+## Teste de carga
+
+**Ferramenta utilizada:**
+
+  - [Apache HTTP server benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html);
+
+**Servidor de testes:**
+
+  - f1-micro (1 vCPUj, 0,6 GB de memória): Máquina mais fraca disponibilizada pelo google;
+  - Instância exclusiva para o teste de carga;
+  - Servidor de aplicação iniciado com o [gunicorn](http://gunicorn.org/);
+  - Base de dados com 10 serviços cadastrados (tamanho da paginação da view).
+
+**Observações:**
+
+ - Tive dúvidas se o teste de carga precisaria ser escrito considerando leitura e escrita, ou apenas leitura (visto que a API fornece apenas leitura de informações). Considerei apenas acessos de leitura.
+ - Em situação de leitura e escrita, eu teria uma view que, em 70% dos casos executaria uma operação de leitura e, em 30% dos casos, executaria uma operação de escrita (esses valores mudam de acordo com a aplicação), e a utilizaria nos testes de carga.
+
+
 #Observações gerais
 -------------
   - Eu, de certa forma, inferi algumas regras de negócio da aplicação, numa situação real eu teria estas informações.
