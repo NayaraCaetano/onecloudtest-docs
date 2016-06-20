@@ -133,7 +133,7 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
 
 **Resultados:**
 
- Usuários com deficiência visual não conseguiriam usar corretamente o sistema seu auxilio de alguma ferramenta externa. Como sugestão, a [api do google translate](https://cloud.google.com/translate/docs/) pode, tanto fazer traduções, quanto leitura em voz alta das informações na tela.
+ Usuários com deficiência visual não conseguiriam usar corretamente o sistema sem auxilio de alguma ferramenta externa. Como sugestão, a [api do google translate](https://cloud.google.com/translate/docs/) pode, tanto fazer traduções, quanto leitura em voz alta das informações na tela.
 
 
 
