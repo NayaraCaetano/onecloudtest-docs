@@ -137,6 +137,14 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
 
 
 
+## Métricas de código
+
+**Resultados:**
+
+   - Verificar no [servidor de CI](http://onecloudtest.ddns.net:8085/browse/ON-MET-2), aba [artefatos](http://onecloudtest.ddns.net:8085/browse/ON-MET-2/artifact/JOB1/Metrics/).
+
+
+
 #Observações gerais
 -------------
   - Eu, de certa forma, inferi algumas regras de negócio da aplicação, numa situação real eu teria estas informações.
