@@ -16,6 +16,9 @@ Documenta os testes.
 
 Link do servidor de CI: [http://onecloudtest.ddns.net:8085/](http://onecloudtest.ddns.net:8085/)
 
+  - Usuário: onecloud
+  - Senha: 123
+
 
 ##Teste caixa branca
 
