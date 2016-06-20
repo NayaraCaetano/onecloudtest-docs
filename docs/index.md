@@ -139,6 +139,12 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
 
 ## Métricas de código
 
+Foram medidas a Complexidade Ciclomática e a Manutenibilidade do código.
+
+**Ferramenta utilizada:**
+
+  - [Radon](https://pypi.python.org/pypi/radon);
+
 **Resultados:**
 
    - Verificar no [servidor de CI](http://onecloudtest.ddns.net:8085/browse/ON-MET-2), aba [artefatos](http://onecloudtest.ddns.net:8085/browse/ON-MET-2/artifact/JOB1/Metrics/).
@@ -154,4 +160,3 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
 -------------
  - [Joe](https://github.com/karan/joe): Gerador "mágico" de arquivos .gitignore;
  - [Coverage](https://coverage.readthedocs.io/en/coverage-4.1/): para medir a cobertura dos testes;
- - [Radon](https://pypi.python.org/pypi/radon): para métricas de código;
