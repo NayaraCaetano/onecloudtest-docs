@@ -41,6 +41,7 @@ Repositório (fica dentro da aplicação, no arquivo tests.py de cada app): [htt
 **Resultados:**
 
   - Verificar [servidor de CI](http://onecloudtest.ddns.net:8085/browse/ON-UN);
+  - [Cobertura de código pelos testes](http://onecloudtest.ddns.net:8085/browse/ON-UN-8/artifact/JOB1/HTML-Coverage/index.html): verificar aba de Artefatos do *build* no servidor de CI.
 
 
 ## Teste caixa preta (funcional)
@@ -62,6 +63,8 @@ Repositório ( pasta `functional_tests` ): [https://github.com/NayaraCaetano/one
 **Resultados:**
 
   - Verificar [servidor de CI](http://onecloudtest.ddns.net:8085/browse/ON-FUN);
+  - [Cobertura de código pelos testes](http://onecloudtest.ddns.net:8085/browse/ON-FUN-22/artifact/JOB1/HTML-Coverage/index.html): verificar aba de Artefatos do *build* no servidor de CI;
+  - [Capturas de tela no momento da falha do teste](http://onecloudtest.ddns.net:8085/browse/ON-FUN-13/artifact/JOB1/Capturas-de-Tela/Index%20do%20Sistema): verificar aba Artefatos do *build* no servidor de CI;
   - O teste falhando evidencia um problema de usabilidade. A tabela não deve ser mostrada contendo apenas as colunas, caso não existam dados para serem mostrados, uma linha informando esta condição deveria ser inserida.
 
 
